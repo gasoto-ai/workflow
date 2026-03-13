@@ -64,5 +64,12 @@ A portable AI-native software delivery workflow adapted from George's Claude Cod
 
 ## Workflow Loop
 ```
-plan-feature → [user approves] → spawn-team → qa → check-ci → reflect
+plan-feature → [George approves] → spawn-team → qa → PR → [George reviews & merges] → reflect
 ```
+
+## PR Convention
+- Forge always works on a feature branch, never commits directly to `main`
+- When work is complete: open a PR against `main`, post the link in #fish-tank
+- Ren does a pre-review pass before it hits George (optional but recommended)
+- George has final say — nothing merges without his approval
+- Branch naming: `feat/<slug>`, `fix/<slug>`, `chore/<slug>`
