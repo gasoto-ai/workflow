@@ -33,9 +33,41 @@ This skill works in **two environments** with different tooling:
 
 ## When NOT to Use
 
-- For single tasks (just do them directly)
+- For single tasks (just do them directly — hand off to Forge)
 - When the plan hasn't been approved by the user
 - For research or exploration (use Explore agent)
+
+## OpenClaw Branch Convention (Ren + Forge)
+
+When operating in the OpenClaw environment with Forge as tech lead:
+
+### Solo task (simple, clear scope)
+- Ren hands off directly to Forge via #fish-tank
+- Forge works on branch `feat/<task-slug>` or `fix/<task-slug>`
+- Forge opens a PR when done, posts link in #fish-tank
+- Ren does optional pre-review; George has final merge authority
+
+### Team task (parallel agents)
+Each spawned agent:
+1. Creates and works on branch `feat/<task-slug>-<agent-id>` (e.g. `feat/auth-agent-1`)
+2. Commits and pushes their branch when done
+3. Posts completion status to Forge via #fish-tank mention
+
+Forge (tech lead role):
+1. Reviews each agent branch: `git diff main...feat/<task-slug>-<agent-id>`
+2. Merges accepted work into consolidation branch: `feat/<task-slug>-consolidated`
+3. Resolves conflicts, ensures architectural consistency
+4. Opens a single PR from the consolidation branch to `main`
+5. Posts PR link in #fish-tank for George's review
+
+George: reviews and merges. Nothing reaches `main` without his approval.
+
+### Branch naming
+- `feat/<slug>` — new feature
+- `fix/<slug>` — bug fix
+- `chore/<slug>` — maintenance, docs, tooling
+- `feat/<slug>-<agent-id>` — spawned agent branch (team tasks)
+- `feat/<slug>-consolidated` — Forge's merge branch (team tasks)
 
 ## Prerequisites
 
