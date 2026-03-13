@@ -83,3 +83,15 @@ Tasks are tracked as **GitHub Issues** in the relevant repo. Implementation note
 - Platform: OpenClaw/Ren on Raspberry Pi 5
 - Forge workspace: `/home/georges/.openclaw/workspace-forge/`
 - Shared workflow skills: `.workflow/skills/` (in Ren's workspace, symlinked/copied to Forge's)
+
+## TDD Policy
+
+TDD is mandatory by default. The only exception:
+
+### Static/presentational sites
+Sites with no business logic (no API routes, no state machines, no data transformations) are exempt from the full TDD cycle. They still require **render smoke tests**:
+- Configure Jest + React Testing Library
+- One test per component: renders without throwing + asserts at least one key piece of content
+- `npm test` must pass
+
+The TDD mandate (write failing test → implement → pass → refactor) applies to any code with behavior. "Out of Scope: tests" must be explicitly declared in the issue spec when tests are intentionally skipped — omission is not acceptable.
