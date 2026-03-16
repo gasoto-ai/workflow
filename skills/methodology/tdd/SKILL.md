@@ -106,3 +106,33 @@ After all tests pass, look for [refactor candidates](refactoring.md):
 [ ] Code is minimal for this test
 [ ] No speculative features added
 ```
+
+## Pre-PR Checklist
+
+Before opening a PR, run through this. Catching issues here means Vex doesn't have to.
+
+- [ ] All tests pass locally
+- [ ] No debug artifacts left (`console.log`, `TODO`, commented-out code)
+- [ ] Every acceptance criterion from the GitHub Issue is covered by at least one test
+- [ ] Commit history is clean — no "wip" or "fix fix fix" commits (squash if needed)
+- [ ] No files modified outside the task scope
+
+If any of these fail, fix before opening the PR.
+
+## Testing Anti-Patterns
+
+These are the patterns that produce tests which pass but don't protect you.
+
+- **Mocking internals** — If you're mocking a private function or an internal collaborator, you're testing implementation. Mock at the boundary (external services, DB calls, network) — not inside the unit.
+
+- **Testing the return value of your own mock** — You configure the mock, then assert on what it returns. You're testing your test setup, not real behavior. The system under test never ran.
+
+- **One assertion per test as a rigid rule** — Right for unit tests on individual behaviors; wrong when it means splitting a single user-facing behavior across 5 tests. Test one behavior, not one line of code.
+
+- **Naming tests after functions** — `test('getUserById')` tells you nothing about what the system should do. `test('returns null when user does not exist')` tells you what matters.
+
+- **Happy path only** — Error states, empty inputs, and edge cases are where real bugs live. Cover the failure modes before calling it done.
+
+- **Snapshot tests instead of assertions** — Snapshots catch accidental changes, not correctness. Don't use them as a substitute for understanding what you're actually verifying.
+
+- **Tight coupling via `beforeEach` setup** — If every test in a describe block depends on a 30-line setup, you've made them all dependent on each other's preconditions. Set up only what each test needs.
