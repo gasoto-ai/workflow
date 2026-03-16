@@ -155,6 +155,17 @@ parallel execution automatically.
 
 Present the plan for user approval. Do NOT ask "does this look good?" — present it and wait.
 
+---
+
+**⛔ HARD GATE — Do not proceed past this point until the user explicitly approves the plan.**
+
+Valid approvals: "go", "looks good", "approved", "build it", "execute", "ship it", or any clear affirmative.
+
+**Silence does not count as approval.** If the user hasn't responded, wait.
+If they ask questions or request changes, address them and re-present before proceeding.
+
+---
+
 ### Phase 5: Execute with spawn-team (MANDATORY)
 
 **This phase is not optional.** When the user approves the plan (or says "go", "looks good", "build it", "execute", "approved", etc.):
