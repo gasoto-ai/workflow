@@ -112,10 +112,36 @@ Build a structured markdown QA report:
 2. If a PR exists, post the report as a PR comment: `gh pr comment {number} --body "{report}"`
 3. If no PR exists, output the report to the terminal instead
 
+## Review Ordering
+
+When reviewing a PR, evaluate in this order and **stop at the first blocking failure**:
+
+### Stage 1: Spec Compliance (check this first)
+Does the code do what the issue says it should do?
+
+- [ ] Every acceptance criterion from the GitHub Issue is addressed
+- [ ] No AC is partially implemented or skipped without explanation
+- [ ] The approach matches what was specified (not a creative reinterpretation)
+
+**If any AC is missing or wrong, block here.** Do not continue to Stage 2.
+Code quality issues are irrelevant if the feature is wrong.
+
+### Stage 2: Code Quality (only after Stage 1 passes)
+Is the implementation well-built?
+
+- [ ] Tests exist and pass for new behavior
+- [ ] No debug artifacts (`console.log`, `TODO`, commented-out code)
+- [ ] No out-of-scope files modified
+- [ ] No obvious anti-patterns (see tdd/SKILL.md anti-patterns section)
+- [ ] Commit history is reasonably clean
+
+**Soft flags** — issues worth noting but not blocking — go in the report even if they don't block the merge.
+
 ## Rules
 
 - Do NOT fix issues — only report them. QA observes and documents.
-- If a check fails, still continue with remaining checks.
+- If a check fails, still continue with remaining checks within the same stage.
+- Stage 1 failures always block. Stage 2 failures block by default; use judgment on soft flags.
 - Be specific about what failed and why.
 - For browser validation, only check pages/routes that were actually changed.
 - If the dev server is not running, skip browser validation and note it in the report.
