@@ -148,13 +148,13 @@ You are "[agent-name]" on team "[team-name]". Your assigned tasks are listed bel
 1. Read the project instructions: `cat .claude/CLAUDE.md`
 2. Read the TDD methodology (this is your implementation workflow — follow it step by step):
    ```
-   cat .workflow/skills/methodology/tdd/SKILL.md
+   cat .workflow/skills/workflow/tdd/SKILL.md
    ```
 3. Read pattern skills relevant to your tasks (these are reference material — consult during implementation):
    [LIST RELEVANT PATTERN SKILL PATHS, e.g.:
    ```
-   cat .workflow/skills/patterns/writing-react/SKILL.md
-   cat .workflow/skills/patterns/writing-tests/SKILL.md
+   cat .workflow/skills/standards/writing-react/SKILL.md
+   cat .workflow/skills/standards/writing-tests/SKILL.md
    ```
    ]
 
@@ -224,10 +224,10 @@ Read these files before writing any code:
 - `.claude/CLAUDE.md` — project architecture and conventions
 
 Read the TDD methodology (this is your implementation workflow — follow it step by step):
-- `.workflow/skills/methodology/tdd/SKILL.md`
+- `.workflow/skills/workflow/tdd/SKILL.md`
 
 Read pattern skills relevant to your tasks (reference material — consult during implementation):
-[LIST RELEVANT PATTERN SKILL PATHS, e.g., .workflow/skills/patterns/writing-react/SKILL.md]
+[LIST RELEVANT PATTERN SKILL PATHS, e.g., .workflow/skills/standards/writing-react/SKILL.md]
 
 ## Your Tasks
 
@@ -366,13 +366,13 @@ You are "[AGENT_NAME]" on team "[TEAM_NAME]".
    ```
 2. Read the TDD methodology (this is your implementation workflow — follow it step by step):
    ```
-   cat .workflow/skills/methodology/tdd/SKILL.md
+   cat .workflow/skills/workflow/tdd/SKILL.md
    ```
 3. Read pattern skills relevant to your work (these are reference material — consult during implementation):
    [LIST RELEVANT PATTERN SKILL PATHS, e.g.:
    ```
-   cat .workflow/skills/patterns/writing-react/SKILL.md
-   cat .workflow/skills/patterns/writing-tests/SKILL.md
+   cat .workflow/skills/standards/writing-react/SKILL.md
+   cat .workflow/skills/standards/writing-tests/SKILL.md
    ```
    ]
 
@@ -410,12 +410,12 @@ Read these files before writing any code:
 - `.claude/CLAUDE.md` — project architecture and conventions
 
 Read the TDD methodology (this is your implementation workflow — follow it step by step):
-- `.workflow/skills/methodology/tdd/SKILL.md`
+- `.workflow/skills/workflow/tdd/SKILL.md`
 
 Read pattern skills relevant to your work (these are reference material — consult during implementation):
 [LIST RELEVANT PATTERN SKILL PATHS, e.g.:
-- `.workflow/skills/patterns/writing-react/SKILL.md`
-- `.workflow/skills/patterns/writing-tests/SKILL.md`
+- `.workflow/skills/standards/writing-react/SKILL.md`
+- `.workflow/skills/standards/writing-tests/SKILL.md`
 ]
 
 ## Your Tasks
