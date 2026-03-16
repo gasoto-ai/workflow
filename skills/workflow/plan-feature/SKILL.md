@@ -104,8 +104,8 @@ Task 5: [Description] (blocked by: Task 3, Task 4)
 ```
 
 Rules for task creation:
-- **TDD first:** Every implementation task should follow the `tdd` skill — agents write one test, implement to pass, repeat. Task descriptions should open with "Follow TDD workflow (`.workflow/skills/methodology/tdd/SKILL.md`)" so agents read it before writing any code.
-- **Pattern skills:** Each task description must list the relevant pattern skill paths agents should consult (e.g., "Consult `.workflow/skills/patterns/writing-react/SKILL.md` and `.workflow/skills/patterns/writing-forms/SKILL.md`"). This ensures spawn-team includes them in agent prompts.
+- **TDD first:** Every implementation task should follow the `tdd` skill — agents write one test, implement to pass, repeat. Task descriptions should open with "Follow TDD workflow (`.workflow/skills/workflow/tdd/SKILL.md`)" so agents read it before writing any code.
+- **Pattern skills:** Each task description must list the relevant pattern skill paths agents should consult (e.g., "Consult `.workflow/skills/standards/writing-react/SKILL.md` and `.workflow/skills/standards/writing-forms/SKILL.md`"). This ensures spawn-team includes them in agent prompts.
 - **Size:** Each task should take one agent 10-30 minutes
 - **Independence:** Maximize tasks that can run in parallel
 - **Completeness:** Each task should be self-contained and testable
@@ -148,7 +148,7 @@ Present the complete plan to the user before execution. The plan should be:
 ```
 ## Execution
 
-Once approved, I will read `.workflow/skills/methodology/spawn-team/SKILL.md` and use it
+Once approved, I will read `.workflow/skills/workflow/spawn-team/SKILL.md` and use it
 to create the agent team, assign tasks with dependencies, and coordinate
 parallel execution automatically.
 ```
@@ -170,7 +170,7 @@ If they ask questions or request changes, address them and re-present before pro
 
 **This phase is not optional.** When the user approves the plan (or says "go", "looks good", "build it", "execute", "approved", etc.):
 
-1. **Immediately** read `.workflow/skills/methodology/spawn-team/SKILL.md`
+1. **Immediately** read `.workflow/skills/workflow/spawn-team/SKILL.md`
 2. **Follow every step** in spawn-team to create the team, create tasks, set dependencies, spawn agents, and monitor execution
 3. **Do NOT** implement the plan yourself task-by-task
 4. **Do NOT** ask the user how they want to execute — always use spawn-team
@@ -214,15 +214,15 @@ The final plan should be a single markdown document that can be passed to the `s
 - **Agent:** [agent-name]
 - **Blocked by:** none
 - **Files:** [list]
-- **Pattern skills:** [list of `.workflow/skills/patterns/` paths relevant to this task]
-- **Description:** Follow TDD workflow (`.workflow/skills/methodology/tdd/SKILL.md`). [Detailed instructions an agent can follow]
+- **Pattern skills:** [list of `.workflow/skills/standards/` paths relevant to this task]
+- **Description:** Follow TDD workflow (`.workflow/skills/workflow/tdd/SKILL.md`). [Detailed instructions an agent can follow]
 
 ### Task 2: [Title]
 - **Agent:** [agent-name]
 - **Blocked by:** Task 1
 - **Files:** [list]
-- **Pattern skills:** [list of `.workflow/skills/patterns/` paths relevant to this task]
-- **Description:** Follow TDD workflow (`.workflow/skills/methodology/tdd/SKILL.md`). [Detailed instructions an agent can follow]
+- **Pattern skills:** [list of `.workflow/skills/standards/` paths relevant to this task]
+- **Description:** Follow TDD workflow (`.workflow/skills/workflow/tdd/SKILL.md`). [Detailed instructions an agent can follow]
 
 ## Team
 - [agent-name]: Tasks 1, 3 (general-purpose)
@@ -232,7 +232,7 @@ The final plan should be a single markdown document that can be passed to the `s
 [Risk table]
 
 ## Execution
-Once approved, I will read `.workflow/skills/methodology/spawn-team/SKILL.md` and use it
+Once approved, I will read `.workflow/skills/workflow/spawn-team/SKILL.md` and use it
 to create the agent team, assign tasks with dependencies, and coordinate
 parallel execution automatically.
 ```

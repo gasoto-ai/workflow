@@ -68,8 +68,8 @@ Tasks are tracked as **GitHub Issues** in the relevant repo. Implementation note
 [Explicit boundaries — refactors, unrelated fixes, etc.]
 
 ## Skills to Read
-- `.workflow/skills/methodology/tdd/SKILL.md`
-- `.workflow/skills/patterns/[relevant]/SKILL.md`
+- `.workflow/skills/workflow/tdd/SKILL.md`
+- `.workflow/skills/standards/[relevant]/SKILL.md`
 ```
 
 ## PR Convention
